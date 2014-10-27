@@ -3,5 +3,5 @@
 ```
 - hosts: etcd_hosts
   roles:
-  - role: sujaymansingh2.etcd
+  - role: chriskite.etcd
 ```
