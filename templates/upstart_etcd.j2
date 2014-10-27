@@ -6,6 +6,7 @@ respawn
 
 exec {{ etcd_install_prefix }}/etcd/bin/etcd \
     {% if etcd_peers %}-peers {{ etcd_peers }} \{% endif %}
+    {% if etcd_discovery_url %}-discovery={{ etcd_discovery_url }} \{% endif %}
     -peer-addr {{ etcd_peer_addr }} \
     -addr {{ etcd_addr }} \
     -data-dir {{ etcd_install_prefix }}/etcd/data-dir \
