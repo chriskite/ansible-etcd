@@ -1,9 +1,8 @@
 ---
 
 galaxy_info:
-  author: Sujay Mansingh
-  description: Installs etcd (builds 0.4.1 from github)
-  company: Sujay
+  author: Chris Kite
+  description: Installs etcd (builds 0.4.6 from github)
   license: MIT
   min_ansible_version: 1.2
   platforms:
@@ -12,8 +11,5 @@ galaxy_info:
     - trusty
   categories:
   - cloud
-  - development
-  - packaging
   - system
-  - web
 dependencies: []
