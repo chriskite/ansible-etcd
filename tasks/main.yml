@@ -26,6 +26,7 @@
 - name: mark as installed
   file: path={{ etcd_install_prefix }}/etcd/installed.ok mode=0644 state=touch
   sudo: yes
+  when: etcd_installed.stat.exists != true
 
 - name: setup etcd in /etc/init
   template: src=upstart_etcd.j2 dest=/etc/init/etcd.conf mode=0644
