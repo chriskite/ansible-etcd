@@ -1,9 +1,5 @@
-- name: Updates apt cache
-  apt: update_cache=true
-  sudo: yes
-
 - name: Installs git and goloang
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest update_cache=true cache_valid_time=86400
   with_items:
     - git
     - golang
@@ -16,7 +12,7 @@
 - name: checkout code
   git: repo=https://github.com/coreos/etcd.git
        dest={{ etcd_install_prefix }}/etcd
-       version=v0.4.1
+       version=v0.4.6
   sudo: yes
   when: etcd_installed.stat.exists != true
 
